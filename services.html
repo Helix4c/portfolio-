@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/services.css">
+    <title>Services</title>
+</head>
+<body>
+     <div class="navbar">
+            <div class="logo">
+                <a href="home.html">HELIX</a>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutUs.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team_profile.html">Teams</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="features" class="features-section">
+            <h2>Our Services</h2>
+            <div class="features-container">
+                <div class="feature-card">
+                    <img src="img/Innovative Solutions.png" alt="Feature 1">
+                    <h3>Web Development</h3>
+                    <p>Build an amezing websites and web applications. </p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/User-Centered Design.png" alt="Feature 2">
+                    <h3>User-Centered Design</h3>
+                    <p>Creating seamless experiences for users worldwide.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/Scalable Technology.png" alt="Feature 3">
+                    <h3>Portfolio</h3>
+                    <p>Building portfolio for you and your company.</p>
+                </div> 
+            </div>
+        
+            <!-- Expanded Features -->
+            <div class="features-container">
+                <div class="feature-card">
+                    <img src="img/Cloud-Based Solutions.png" alt="Feature 4">
+                    <h3>Cloud-Based Solutions</h3>
+                    <p>Leveraging the cloud for more efficient and flexible services.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/Automation Tools.png" alt="Feature 5">
+                    <h3>Automation Tools</h3>
+                    <p>Streamlining workflows with cutting-edge automation tools.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/data analytics.png" alt="Feature 6">
+                    <h3>Data Analytics</h3>
+                    <p>Unlocking valuable insights with powerful data analytics.</p>
+                </div>
+            </div>
+        
+            <!-- Additional Container -->
+            <div class="features-container">
+                <div class="feature-card">
+                    <img src="img/security solutions for tech.png" alt="Feature 7">
+                    <h3>Innovative Solutions</h3>
+                    <p>We deliver unique and creative solutions to complex problems.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/Mobile Integration.png" alt="Feature 8">
+                    <h3>Mobile Integration</h3>
+                    <p>Integrating seamless mobile experiences with advanced technology.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/Custom Development.png" alt="Feature 9">
+                    <h3>Custom Development</h3>
+                    <p>Tailoring software solutions to your specific business needs.</p>
+                </div>
+            </div>
+        
+        
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>About Us</h4>
+<p>Committed to Excellence and Innovation</p>            </div>
+             <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="aboutUs.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team_profile.html">Teams</a></li>
+                    <li><a href="contact_us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: helix@gmail.com</li>
+                    <li>Phone: +123 456 7890</li>
+                    <li>Address: 4 kilo</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navbarUl = document.querySelector('.navbar ul');
+            const hamburger = document.querySelector('.hamburger');
+            navbarUl.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.navbar ul li a');
+    const currentUrl = window.location.href;
+
+    navLinks.forEach(link => {
+        if (currentUrl.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+
+        link.addEventListener('click', function() {
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            // Add active class to the clicked link
+            this.classList.add('active');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

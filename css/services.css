@@ -1,0 +1,415 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #141e30, #243b55);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00c6ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar .logo:hover {
+    color: #1affff;
+    text-shadow: 0 0 10px #1affff;
+}
+/* Logo Link Styling */
+.navbar .logo a {
+    text-decoration: none; /* Remove underline */
+    font-size: 2em;
+    font-weight: bold;
+    color: #3356bd; /* You can change this color */
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: #1d2994; /* Change color on hover */
+}
+
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:active {
+    color: #00c6ff;
+    text-shadow: 0 0 8px #00c6ff;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #00c6ff;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a:active::after {
+    width: 100%;
+}
+
+/* Active link (persist even after click) */
+.navbar ul li a.active {
+    color: #00c6ff;
+    font-weight: bold;
+}
+
+.navbar ul li a.active::after {
+    width: 100%;
+}
+
+.navbar .btn {
+    padding: 10px 20px;
+    background: #00c6ff;
+    color: #141e30;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.navbar .btn:hover {
+    background: #1affff;
+    box-shadow: 0 0 15px #1affff;
+}
+
+.navbar .btn:focus {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        background: linear-gradient(90deg, #141e30, #243b55);
+        padding: 15px 0;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background: #00c6ff;
+        margin: 4px 0;
+        transition: all 0.3s;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+.features-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #a8c0ff, #3f5efb);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.features-section::before, .features-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 10s infinite ease-in-out;
+}
+
+.features-section::before {
+    top: -120px;
+    left: -120px;
+    width: 300px;
+    height: 300px;
+    z-index: 0;
+}
+
+.features-section::after {
+    bottom: -120px;
+    right: -120px;
+    width: 300px;
+    height: 300px;
+    animation: float 8s infinite ease-in-out reverse;
+}
+
+.features-section h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #fff, #f2f2f2);
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    margin: 10px;
+    height: 393px;
+    width: 370px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card img {
+    width: 140px;  /* Fixing image size */
+    height: 140px; /* Fixing image size */
+    margin-bottom: 25px;
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    object-fit: cover; /* Ensures the image is nicely cropped within the circle */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.feature-card:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    border-color: #00796b; /* Maintaining border color */
+}
+
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #00796b;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.feature-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 85%;
+        margin-bottom: 30px;
+    }
+
+    .feature-card img {
+        max-width: 150px;
+    }
+}
+
+
+/* Footer */
+
+
+footer {
+    background: linear-gradient(90deg, #141e30, #243b55);
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    border-top: 2px solid #00c6ff;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150%;
+    height: 2px;
+    background: linear-gradient(90deg, #00c6ff, #1affff);
+    transform: translateX(-50%);
+    animation: glow 3s infinite linear;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.2;
+        transform: translateX(-50%) scaleX(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1.2);
+    }
+    100% {
+        opacity: 0.2;
+        transform: translateX(-50%) scaleX(0.8);
+    }
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.footer-column h4 {
+    font-size: 1.5rem;
+    color: #00c6ff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-column p, .footer-column ul {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin: 10px 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #00c6ff;
+    text-shadow: 0 0 10px #00c6ff;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #cccccc;
+    margin-top: 20px;
+}
+
+footer p::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #00c6ff;
+    margin: 10px auto 0;
+}
+
+footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #00c6ff, transparent);
+}

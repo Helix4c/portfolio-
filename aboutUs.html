@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/about_us.css">
+    
+</head>
+<body>
+     <div class="navbar">
+            <div class="logo">
+                <a href="home.html">HELIX</a>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutUs.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team_profile.html">Teams</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    <header>
+        <h1>About Us</h1>
+        <p>Committed to Excellence and Innovation</p>
+    </header>
+
+    <div class="about-section">
+        <h2>Who We Are</h2>
+        <p>We are a passionate team dedicated to delivering outstanding services and creating meaningful experiences. Our vision is to inspire innovation and bring transformative solutions to our clients.</p>
+        <div class="values">
+            <div class="value-card">
+                <h3>Integrity</h3>
+                <p>We uphold the highest standards of honesty and accountability in all that we do.</p>
+            </div>
+            <div class="value-card">
+                <h3>Innovation</h3>
+                <p>We strive to push boundaries and deliver cutting-edge solutions.</p>
+            </div>
+            <div class="value-card">
+                <h3>Collaboration</h3>
+                <p>We believe in the power of teamwork to achieve great results.</p>
+            </div>
+        </div>
+    </div>
+    /* just trying*/
+
+    <div class="history-section">
+        <h2>Our Journey</h2>
+<p>Started from 2024, by four team mates and now we have six members</p>
+<p>Our story began in 2024 with a shared vision and unwavering passion for technology. What started as a small initiative by four dedicated teammates quickly grew into a dynamic and collaborative team. Driven by our commitment to innovation, creativity, and delivering exceptional tech solutions, we have expanded to include six talented members who bring unique skills, fresh perspectives, and boundless energy to every project.</p>
+<p>From those early brainstorming sessions to building our first successful project, each step of our journey has been marked by growth, challenges, and triumphs. Together, we’ve evolved into a strong, forward-thinking team ready to tackle the tech challenges of today and shape the possibilities of tomorrow.</p>
+<p>Our growth is not just in numbers, but in ideas, skills, and the impact we create for our clients and community. As we continue to learn, adapt, and innovate, we remain excited for what lies ahead—because this is just the beginning of our story.</p>
+<p>Join us on our journey as we turn ideas into reality and technology into solutions! 🚀</p>
+        </div>
+        
+
+   
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>About Us</h4>
+<p>Committed to Excellence and Innovation</p>            </div>
+             <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="aboutUs.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team_profile.html">Teams</a></li>
+                    <li><a href="contact_us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: helix@gmail.com</li>
+                    <li>Phone: +123 456 7890</li>
+                    <li>Address: 4 kilo</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navbarUl = document.querySelector('.navbar ul');
+            const hamburger = document.querySelector('.hamburger');
+            navbarUl.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.navbar ul li a');
+    const currentUrl = window.location.href;
+
+    navLinks.forEach(link => {
+        if (currentUrl.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+
+        link.addEventListener('click', function() {
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            // Add active class to the clicked link
+            this.classList.add('active');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
