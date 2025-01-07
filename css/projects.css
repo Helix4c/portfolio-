@@ -1,0 +1,251 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #141e30, #243b55);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00c6ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar .logo:hover {
+    color: #1affff;
+    text-shadow: 0 0 10px #1affff;
+}
+/* Logo Link Styling */
+.navbar .logo a {
+    text-decoration: none; /* Remove underline */
+    font-size: 2em;
+    font-weight: bold;
+    color: #3356bd; /* You can change this color */
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: #1d2994; /* Change color on hover */
+}
+
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:active {
+    color: #00c6ff;
+    text-shadow: 0 0 8px #00c6ff;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #00c6ff;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a:active::after {
+    width: 100%;
+}
+
+/* Active link (persist even after click) */
+.navbar ul li a.active {
+    color: #00c6ff;
+    font-weight: bold;
+}
+
+.navbar ul li a.active::after {
+    width: 100%;
+}
+
+.navbar .btn {
+    padding: 10px 20px;
+    background: #00c6ff;
+    color: #141e30;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.navbar .btn:hover {
+    background: #1affff;
+    box-shadow: 0 0 15px #1affff;
+}
+
+.navbar .btn:focus {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        background: linear-gradient(90deg, #141e30, #243b55);
+        padding: 15px 0;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background: #00c6ff;
+        margin: 4px 0;
+        transition: all 0.3s;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Services Section */
+.features-section {
+    padding: 60px 30px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #3356bd;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.feature-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3356bd;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.feature-card .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #00c6ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.feature-card .btn:hover {
+    background: #1affff;
+    box-shadow: 0 0 15px #1affff;
+}
+
+.feature-card .btn:focus {
+    outline: none;
+}
+
+@media (max-width: 1024px) {
+    .features-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+}
